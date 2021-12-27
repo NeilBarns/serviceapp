@@ -6,10 +6,10 @@ const HeaderStyles = ScaledSheet.create({
         padding: '15@s',
         paddingBottom: '10@s',
         paddingTop: '30@s',
-        height: '100@s',
+        height: '90@s',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center',
+        alignItems: 'center'
     },
 
     /* LEFT SIDE OF THE HEADER */
