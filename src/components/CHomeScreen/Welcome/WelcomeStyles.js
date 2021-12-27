@@ -8,15 +8,18 @@ const WelcomeStyles = ScaledSheet.create({
     {
         padding: '20@s',
         paddingBottom: '10@s',
-        paddingTop: '0@s',
-        height: '100@s',
+        paddingTop: '20@s',
+        // height: '700@s',
         flexDirection: 'column',
     },
 
     welcomeText:
     {
         fontSize: '30@s',
-        fontWeight: 'bold'
+        fontWeight: '500',
+        // letterSpacing: 1,
+        // color: '#2e302f'
+        color: '#FFFFFF',
     }
 
 })
