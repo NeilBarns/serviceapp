@@ -10,13 +10,13 @@ const PopularServicesStyles = ScaledSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'space-between',
-        height: '250@s',
+        height: '250@s'
     },
 
     popServiceCard:
     {
         height: '100%',
-        marginBottom: '55@s',
+        // marginBottom: '55@s',
         borderRadius: '5@s',
         marginRight: '15@s'
     },

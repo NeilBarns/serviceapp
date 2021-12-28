@@ -17,17 +17,10 @@ const SearchStyles = ScaledSheet.create({
         borderRadius: '50@s'
     },
 
-    // welcomeText:
-    // {
-    //     fontSize: '45@s',
-    //     // fontWeight: 'bold',
-    //     color: '#2e302f'
-    // }
-
     searchIcon:
     {
         fontSize: '18@s',
-        color: '#2e302f'
+        color: '#eb6e65'
     },
 
     searchText:

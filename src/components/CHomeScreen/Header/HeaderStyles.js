@@ -1,15 +1,16 @@
 import { ScaledSheet } from 'react-native-size-matters';
 
+
 const HeaderStyles = ScaledSheet.create({
     container: 
     {
         padding: '15@s',
         paddingBottom: '10@s',
-        paddingTop: '30@s',
-        height: '90@s',
+        // paddingTop: '30@s',
+        // height: '90@s',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        alignItems: 'center',
     },
 
     /* LEFT SIDE OF THE HEADER */
@@ -42,7 +43,8 @@ const HeaderStyles = ScaledSheet.create({
     locationSharpIcon:
     {
         fontSize: '24@s', 
-        color: '#F3C551'
+        // color: '#F3C551'
+        color: '#eb6e65'
     },
     triangleDownIcon:
     {
