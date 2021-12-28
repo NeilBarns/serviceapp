@@ -28,11 +28,12 @@ const CHomeScreenStyles = ScaledSheet.create({
     welcomeSearchContainer:
     {
         width: '100%',
-        height: '480@s'
+        height: '510@s'
     },
     searchContainer:
     {
         padding: '15@s',
+        marginTop: '10@s',
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
