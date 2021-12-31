@@ -9,7 +9,7 @@ import CProjectsScreen from '../../../screens/CProjects/CProjectsScreen';
 
 const BottomTab = () => {
 
-    // const navigation = useNavigation();
+    //const navigation = useNavigation();
 
     const screenOptions = {
         headerShown: false,

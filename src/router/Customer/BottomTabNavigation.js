@@ -1,16 +1,15 @@
 import React from 'react'
 import { Text } from 'react-native'
-import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import { scale } from 'react-native-size-matters';
 
 //SCREENS
-import CHomeScreen from '../screens/CHome/CHomeScreen';
-import CProjectsScreen from '../screens/CProjects/CProjectsScreen';
-import CInboxScreen from '../screens/CInbox/CInboxScreen';
-import CProfileScreen from '../screens/CProfile/CProfileScreen';
+import CHomeScreen from '../../screens/CHome/CHomeScreen';
+import CProjectsScreen from '../../screens/CProjects/CProjectsScreen';
+import CInboxScreen from '../../screens/CInbox/CInboxScreen';
+import CProfileScreen from '../../screens/CProfile/CProfileScreen';
 
 export default function BottomTabNavigation()
 {

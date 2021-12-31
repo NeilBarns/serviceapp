@@ -1,4 +1,5 @@
-import BottomTabNavigation from './src/router/BottomTabNavigation';
+import BottomTabNavigation from './src/router/Customer/BottomTabNavigation';
+
 export default function App() {
   return <BottomTabNavigation/>;
 }
