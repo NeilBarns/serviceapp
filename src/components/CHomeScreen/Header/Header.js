@@ -14,7 +14,9 @@ const Header = () => {
                 <View style={HeaderStyles.locationText}>
                     <Text style={HeaderStyles.locationTextLabel}>Serving at</Text>
                     <View style={HeaderStyles.geoTextContainer}>
-                        <Text style={HeaderStyles.geoText}>Master Bubble Laundry Shop</Text>
+                        <Text style={HeaderStyles.geoText}
+                        numberOfLines={1} 
+                        ellipsizeMode='tail'>Master Bubble Laundry Shop</Text>
                         <Octicons name="triangle-down" style={HeaderStyles.triangleDownIcon}/>
                     </View>
                 </View>

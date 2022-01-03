@@ -33,7 +33,8 @@ const HeaderStyles = ScaledSheet.create({
     geoTextContainer:
     {
         flexDirection: 'row',
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
+        maxWidth: '95%'
     },
     geoText:
     {
