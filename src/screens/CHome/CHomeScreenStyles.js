@@ -49,7 +49,8 @@ const CHomeScreenStyles = ScaledSheet.create({
         marginBottom: '0@s',
         paddingLeft: '15@s',
         fontWeight: '600',
-        fontSize: '28@s',
+        fontSize: '23@s',
+        fontFamily: 'Poppins-Regular'
     }
 })
 

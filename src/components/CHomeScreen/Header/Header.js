@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, ImageBackground } from 'react-native'
+import { View, Text, TouchableOpacity} from 'react-native'
 import HeaderStyles from './HeaderStyles'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Octicons from 'react-native-vector-icons/Octicons';

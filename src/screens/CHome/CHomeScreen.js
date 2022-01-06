@@ -1,15 +1,18 @@
 import React, { useRef, useState } from 'react'
 import {View, ScrollView, ImageBackground, Text, Pressable, StatusBar} from 'react-native'
 import { scale } from 'react-native-size-matters';
+import { useFocusEffect } from '@react-navigation/native';
+
+import CHomeScreenStyles from './CHomeScreenStyles'
 
 import Header from '../../components/CHomeScreen/Header/Header';
 import WelcomeText from '../../components/CHomeScreen/Welcome/Welcome';
 import Search from '../../components/CHomeScreen/Search/Search';
-import CHomeScreenStyles from './CHomeScreenStyles'
 import Categories from '../../components/CHomeScreen/Categories/Categories';
 import PopularServices from '../../components/CHomeScreen/Categories/PopularServices';
 import ProjectsToday from '../../components/CHomeScreen/ProjectsToday/ProjectsToday';
 import BottomSearchSheet from '../../components/CHomeScreen/Search/SearchComponents/BottomSearchSheet';
+import {changeStatusBarStyle} from '../../components/general/StatusBar';
 
 const CHomeScreen = () => {
     
@@ -22,10 +25,12 @@ const CHomeScreen = () => {
     const [statusBarStyle, setStatusBarStyle] = useState(statusBarStyleValues[0]);
     
 
+
     function changeStatusBarDisplay(valueIndex = 0)
     {
         setStatusBarBackground(statusBarColorsValues[valueIndex]);
         setStatusBarStyle(statusBarStyleValues[valueIndex]);
+        changeStatusBarStyle(false, statusBarColorsValues[valueIndex], statusBarStyleValues[valueIndex]);
     };
 
     return (
@@ -48,7 +53,6 @@ const CHomeScreen = () => {
                     <ImageBackground  
                     source={require('../../assets/bobsponge.jpg')}
                     resizeMode='cover' 
-                    // borderRadius={scale(15)}
                     style={CHomeScreenStyles.welcomeSearchContainer}>
 
                         <WelcomeText />
