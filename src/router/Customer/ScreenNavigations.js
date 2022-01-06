@@ -4,34 +4,35 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import { scale } from 'react-native-size-matters';
+import { createStackNavigator } from '@react-navigation/stack';
 
 //SCREENS
-import CHomeScreen from '../../screens/CHome/CHomeScreen';
-import CProjectsScreen from '../../screens/CProjects/CProjectsScreen';
-import CInboxScreen from '../../screens/CInbox/CInboxScreen';
-import CProfileScreen from '../../screens/CProfile/CProfileScreen';
+import {CustomerHomeScreen, 
+        CustomerProjectsScreen,
+        CustomerInboxScreen,
+        CustomerProfileScreen,
+        CustomerProjectCreationScreen} from '../../screens/MainScreens'
 
-export default function BottomTabNavigation()
-{
-    const screenOptions = {
-        headerShown: false,
-        tabBarActiveTintColor: '#eb6e65',
-        tabBarStyle:{
-            height: scale(50),
-            padding: scale(5)
-        },
-        
-    };
-  
-    const Tab = createBottomTabNavigator();
 
-    return(
-        <NavigationContainer>
-            <Tab.Navigator  initialRouteName='CHome'
+const HomeStack = createStackNavigator();
+
+const screenOptions = {
+    headerShown: false,
+    tabBarActiveTintColor: '#eb6e65',
+    tabBarStyle:{
+        height: scale(50),
+        padding: scale(5)
+    }
+};
+
+const Tab = createBottomTabNavigator();
+
+const HomeStackScreen = () => (
+            <Tab.Navigator  initialRouteName='CustomerHomeScreen'
                             screenOptions={screenOptions}
                             >
-                <Tab.Screen name='CHome' 
-                            component={CHomeScreen}
+                <Tab.Screen name='CustomerHomeScreen' 
+                            component={CustomerHomeScreen}
                             options={{
                                 tabBarLabel: ({focused}) => (
                                     <Text style={{
@@ -48,7 +49,7 @@ export default function BottomTabNavigation()
                             }}/>
 
                 <Tab.Screen name='CProject' 
-                            component={CProjectsScreen}
+                            component={CustomerProjectsScreen}
                             options={{
                                 tabBarLabel: ({focused}) => (
                                     <Text style={{
@@ -64,7 +65,7 @@ export default function BottomTabNavigation()
                             }}/>
 
                 <Tab.Screen name='CInbox' 
-                            component={CInboxScreen}
+                            component={CustomerInboxScreen}
                             options={{
                                 tabBarLabel: ({focused}) => (
                                     <Text style={{
@@ -80,7 +81,7 @@ export default function BottomTabNavigation()
                             }}/>
 
                 <Tab.Screen name='CProfile' 
-                            component={CProfileScreen}
+                            component={CustomerProfileScreen}
                             options={{
                                 tabBarLabel: ({focused}) => (
                                     <Text style={{
@@ -96,6 +97,23 @@ export default function BottomTabNavigation()
                             }}/>
                             
             </Tab.Navigator>
+)
+
+    
+
+
+export default function ScreenNavigations()
+{
+    return(
+        <NavigationContainer>
+            <HomeStack.Navigator 
+            screenOptions={{
+                headerShown: false
+            }}
+            >
+                <HomeStack.Screen name="HomeStackScreen" component={HomeStackScreen}/>
+                <HomeStack.Screen name="CustomerProjectCreationScreen" component={CustomerProjectCreationScreen}/>
+            </HomeStack.Navigator>
         </NavigationContainer>
     );
 }

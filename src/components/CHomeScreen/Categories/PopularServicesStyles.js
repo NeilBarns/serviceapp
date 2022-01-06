@@ -33,9 +33,11 @@ const PopularServicesStyles = ScaledSheet.create({
     popServiceTitle:
     {
         marginTop: '5@s',
-        fontSize: '18@s',
-        fontWeight: '700',
-        color: 'white'
+        fontSize: '15@s',
+        // fontWeight: '700',
+        color: 'white',
+        fontFamily: 'Poppins-Regular'
+
     },
 
     popServiceNumber:

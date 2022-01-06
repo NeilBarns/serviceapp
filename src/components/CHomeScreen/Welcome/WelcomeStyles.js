@@ -12,16 +12,17 @@ const WelcomeStyles = ScaledSheet.create({
         paddingTop: '30@s',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        // alignItems: 'center'
     },
 
     welcomeText:
     {
-        // fontSize: '35@s',
-        fontSize: '22@s',
+        fontSize: '30@s',
+        // fontSize: '22@s',
         letterSpacing: '1@s',
-        lineHeight: '30@s',
-        fontWeight: '500',
+        // lineHeight: '30@s',
+        // fontWeight: 'bold',
+        fontFamily: 'Poppins-Regular',
         // fontWeight: 'bold',
         // color: '#FFFFFF',
         color: 'black'

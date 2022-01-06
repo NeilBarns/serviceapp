@@ -1,12 +1,16 @@
 import React, {useState, useEffect} from 'react'
-import { View, Text, ScrollView} from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity, StatusBar} from 'react-native'
 import Octicons from 'react-native-vector-icons/Octicons';
 import FilteredResultsStyle from './FilteredResultsStyle';
+import { useNavigation } from '@react-navigation/native';
+import {changeStatusBarStyle} from '../../../general/StatusBar';
 
 const FilteredResults = ({ route }) => {
 
-    const data = route.params.data;
+    const {data, ref: refRBSheet} = route.params;
+    const navigation = useNavigation();
     var card = <View style={{backgroundColor: 'white'}}></View>;
+
     
     if(data.length > 0)
     {
@@ -17,13 +21,33 @@ const FilteredResults = ({ route }) => {
                             <View style={{backgroundColor:'white'}}>
                                 {data.map((service, id) =>
                                 (
-                                    <View style={FilteredResultsStyle.searchedServiceCard} 
-                                            key={id}>
+                                    <TouchableOpacity style={FilteredResultsStyle.searchedServiceCard} 
+                                            key={id}
+                                            onPress={() => {
+
+                                                refRBSheet.current.close();
+                                                
+                                                navigation.navigate('CustomerProjectCreationScreen', 
+                                                {
+                                                    id: service.id,
+                                                    service: service.title,
+                                                    description: service.description,
+                                                    imageUrl: service.imageUrl
+                                                });
+
+                                                setTimeout(function(){
+ 
+                                                    changeStatusBarStyle(true, 'transparent');
+                                               
+                                                  }, 1000);
+
+                                                
+                                            }}>
                                         <View style={FilteredResultsStyle.searchedServiceIconContainer}>
                                                 <Octicons name='project' style={FilteredResultsStyle.searchedServiceIcon} />
                                         </View>
                                         <Text>{service.title}</Text>
-                                    </View>
+                                    </TouchableOpacity>
                                 ))}
                             </View>
                         </ScrollView>;
