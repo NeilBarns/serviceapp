@@ -1,5 +1,5 @@
 import { ScaledSheet } from 'react-native-size-matters';
-import { screenHeight, screenWidth } from '../../constants/Dimensions';
+import { screenHeight, screenWidth } from '../../components/general/Dimensions';
 
 const CHomeScreenStyles = ScaledSheet.create({
     container: 

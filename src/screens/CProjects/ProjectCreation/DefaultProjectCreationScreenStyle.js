@@ -52,7 +52,7 @@ const DefaultProjectCreationScreenStyle = ScaledSheet.create ({
         flexDirection: 'row',
         elevation: 2,
         padding: '20@s',
-        paddingBottom: '35@s',
+        paddingBottom: '25@s',
         backgroundColor: '#679bd4',
         borderRadius: '15@s',
         marginRight: '15@s'
@@ -61,13 +61,13 @@ const DefaultProjectCreationScreenStyle = ScaledSheet.create ({
     badgeTitle:
     {
         fontFamily: 'Nunito-Bold',
-        fontSize: '25@s',
+        fontSize: '20@s',
         color: 'white'       
     },
 
     badgeDescriptionLabel:
     {
-        lineHeight: '22@s',
+        lineHeight: '20@s',
         marginTop: '10@s'
     },
 
@@ -78,9 +78,9 @@ const DefaultProjectCreationScreenStyle = ScaledSheet.create ({
 
     badgeIcon:
     {
-        height: '70@s',
-        width: '70@s',
-        marginLeft: '25@s'        
+        height: '45@s',
+        width: '45@s',
+        marginLeft: '30@s'        
     },
 
     continueTouchableOpacityContainer:
@@ -103,7 +103,7 @@ const DefaultProjectCreationScreenStyle = ScaledSheet.create ({
         color: 'white',
         textAlign: 'center',
         fontWeight: 'bold',
-        fontSize: '16@s'       
+        fontSize: '14@s'       
     }
 });
 

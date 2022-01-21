@@ -54,6 +54,8 @@ const tempImages = [
 const DefaultProjectCreationScreen = ({route}) => {
 
     const {id, description} = route.params.data;
+    const setModalShow = route.params.modalShow;
+    const setModalData = route.params.modalData;
 
     const navigation = useNavigation();
 
@@ -117,7 +119,10 @@ const DefaultProjectCreationScreen = ({route}) => {
             </ScrollView>
             <View style={Style.continueTouchableOpacityContainer}>
                 <TouchableOpacity style={Style.continueTouchableOpacity}
-                                  onPress={() => (navigation.navigate('CustomerProjectCreationWhenWhere'))}>
+                                  onPress={() => (navigation.navigate('CustomerProjectCreationWhenWhere', {
+                                      modalShow: setModalShow,
+                                      modalData: setModalData
+                                  }))}>
                     <Text style={Style.continueTouchableOpacityLabel}>Let's start!</Text>
                 </TouchableOpacity>
             </View>

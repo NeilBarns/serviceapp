@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, StatusBar} from 'react-native'
+import {StatusBar} from 'react-native'
 
 const changeStatusBarStyle = (translucent, color, style) =>
 {
