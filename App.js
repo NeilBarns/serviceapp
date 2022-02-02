@@ -2,6 +2,7 @@ import ScreenNavigations from './src/router/Customer/ScreenNavigations';
 
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
+import { RootSiblingParent } from 'react-native-root-siblings';
 
 export default function App() {
 
@@ -13,8 +14,8 @@ export default function App() {
   if (!fontsLoaded) {
     return <AppLoading />;
   } else {
-    return <ScreenNavigations/>;
+    return <RootSiblingParent><ScreenNavigations /></RootSiblingParent>;
   }
 
-  
+
 }

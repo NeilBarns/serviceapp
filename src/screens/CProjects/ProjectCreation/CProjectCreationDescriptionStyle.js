@@ -88,11 +88,11 @@ const CProjectCreationDescriptionStyle = ScaledSheet.create ({
 
     backTouchableOpacity:
     {
-        // backgroundColor: '#eb6e65',
         backgroundColor: 'white',
-        padding: '12@s',
+        paddingHorizontal: '5@s',
+        justifyContent: 'center',
+        alignItems: 'center',
         borderRadius: '10@s',
-        elevation: 5       
     },
 
     backTouchableOpacityIcon:

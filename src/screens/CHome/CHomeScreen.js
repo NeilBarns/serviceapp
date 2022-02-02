@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import {View, ScrollView, ImageBackground, Text, Pressable, StatusBar} from 'react-native'
 import { scale } from 'react-native-size-matters';
-import { useFocusEffect } from '@react-navigation/native';
 
 import CHomeScreenStyles from './CHomeScreenStyles'
 
@@ -15,7 +14,7 @@ import BottomSearchSheet from '../../components/CHomeScreen/Search/SearchCompone
 import {changeStatusBarStyle} from '../../components/general/StatusBar';
 
 const CHomeScreen = () => {
-    
+
     const refRBSheet = useRef();
 
     const statusBarColorsValues = ['#FAFAFA', '#eb6e65'];

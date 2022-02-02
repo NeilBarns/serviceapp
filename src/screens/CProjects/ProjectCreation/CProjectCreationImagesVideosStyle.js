@@ -1,5 +1,5 @@
 import { ScaledSheet } from 'react-native-size-matters';
-import { screenHeight, screenWidth } from '../../../components/general/Dimensions';
+import { screenWidth } from '../../../components/general/Dimensions';
 
 const CProjectCreationImagesVideosStyle = ScaledSheet.create ({
 
@@ -10,7 +10,7 @@ const CProjectCreationImagesVideosStyle = ScaledSheet.create ({
 
     labelStyle:
     {
-        fontSize: '14@s',
+        fontSize: '12@s',
         color: '#85807f',
         textAlign: 'center',
         paddingBottom: '15@s',
@@ -84,9 +84,10 @@ const CProjectCreationImagesVideosStyle = ScaledSheet.create ({
     backTouchableOpacity:
     {
         backgroundColor: 'white',
-        padding: '12@s',
+        paddingHorizontal: '5@s',
+        justifyContent: 'center',
+        alignItems: 'center',
         borderRadius: '10@s',
-        elevation: 5       
     },
 
     backTouchableOpacityIcon:

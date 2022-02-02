@@ -65,6 +65,7 @@ const ImageVideoPostModal = ({visible,
         {
             setTemp_Image(tempimage);
             setImageType(imageType);
+            setPostDescription('');
         }
 
         if(imageTypeLocal === 'video')
