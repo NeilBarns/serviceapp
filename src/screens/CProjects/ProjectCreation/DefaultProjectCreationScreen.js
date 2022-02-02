@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { View, Text, 
         ScrollView,
         Image, TouchableOpacity } from 'react-native'
 import Style from './DefaultProjectCreationScreenStyle'
 import { useNavigation } from '@react-navigation/native';
-
+import useTaskDetailsContext from '../../../hooks/Customer/useTaskDetailsContext';
+import useTaskDetailChangesMadeContext from '../../../hooks/Customer/useTaskDetailChangesMadeContext';
 
 const tempBadges = [
     {
@@ -58,6 +59,14 @@ const DefaultProjectCreationScreen = ({route}) => {
     const setModalData = route.params.modalData;
 
     const navigation = useNavigation();
+
+    const { actions } = useContext(useTaskDetailsContext);
+    const { actions_changes } = useContext(useTaskDetailChangesMadeContext);
+
+    useEffect(() => {
+        actions({ type: 'setTaskDetailsDefault', payload: {  } });
+        actions_changes({ type: 'noChanges' });
+    }, [])
 
     return (
         <>

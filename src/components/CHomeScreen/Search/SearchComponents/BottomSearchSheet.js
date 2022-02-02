@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, ScrollView, Text } from 'react-native'
 import BottomSheet from "react-native-raw-bottom-sheet";
 import { scale } from 'react-native-size-matters';
@@ -71,7 +71,9 @@ const BottomSearchSheet = ({refRBSheet, changeStatusBarDisplay, navigation, rout
                 closeDuration={0}
                 openDuration={0}
                 animationType={'slide'}
-                onOpen={() => changeStatusBarDisplay(1)}
+                onOpen={() => {
+                    changeStatusBarDisplay(1);
+                }}
                 onClose={() => changeStatusBarDisplay(0)}
                 customStyles={{
                 wrapper: {

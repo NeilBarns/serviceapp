@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { View, Text, ScrollView, TouchableOpacity} from 'react-native'
 import Style from './CProjectCreationWhenWhereStyle'
 import {Calendar} from 'react-native-calendars';
@@ -6,26 +6,32 @@ import {EvilIcons, Ionicons} from '../../../components/general/Icons'
 import {getCurrentDate, initialTime} from '../../../components/general/DateTime'
 import TimePickerModal from './TimePickerModal';
 import { useNavigation } from '@react-navigation/native';
-
+import { scale } from 'react-native-size-matters';
+import useTaskDetailsContext from '../../../hooks/Customer/useTaskDetailsContext';
+import useTaskDetailChangesMadeContext from '../../../hooks/Customer/useTaskDetailChangesMadeContext';
 
 const CProjectCreationWhenWhere = ({route}) => {
     
     const navigation = useNavigation();
 
+    const { actions } = useContext(useTaskDetailsContext);
+    const { actions_changes } = useContext(useTaskDetailChangesMadeContext);
+
     const [modalShow, setModalShow] = useState(false);
     const [modalData, setModalData] = useState(false);
-
-
+    
     const calendarDateSelection = (day) => {
         
-        const dateString = day.dateString;
-        setSelectedDate(dateString);
-        setModalData(dateString);
+        const value = day.dateString;
+        setSelectedDate(value);
+        setModalData(value);
+        actions({ type: 'setTaskDateGlobal', payload: { value } });
+        actions_changes({ type: 'changesMade' });
     }
 
     const [selectedDate, setSelectedDate] = useState(getCurrentDate());
-
     const [timeLabel, setTimeLabel] = useState(initialTime);
+
 
     return (
         <View style={Style.container}>
@@ -44,6 +50,11 @@ const CProjectCreationWhenWhere = ({route}) => {
                     style={Style.calendar}
                     current={getCurrentDate()}
                     minDate={getCurrentDate()}
+                    theme={{
+                        textDayFontSize: scale(11),
+                        textMonthFontSize: scale(11),
+                        textDayHeaderFontSize: scale(11)
+                    }}  
                     enableSwipeMonths
                     markedDates={{
                         [selectedDate]: {selected: true, marked: false, selectedColor: '#eb6e65'}
@@ -62,7 +73,9 @@ const CProjectCreationWhenWhere = ({route}) => {
                     </View>
                     <View style={Style.timeChangerContainer}>
                         <Text style={Style.timeChangerLabel}
-                        onPress={() => (setModalShow(true))}
+                        onPress={() => {
+                            setModalShow(true);
+                        }}
                         >Change time</Text>
                     </View>
                 </View>
@@ -95,12 +108,7 @@ const CProjectCreationWhenWhere = ({route}) => {
                 </TouchableOpacity>
 
                 <TouchableOpacity style={Style.continueTouchableOpacity}
-                                  onPress={() => (navigation.navigate('CustomerProjectCreationDescription'
-                                //   , {
-                                //       modalShow: setModalShow,
-                                //       modalData: setModalData
-                                //   }
-                                  ))}
+                                  onPress={() => (navigation.navigate('CustomerProjectCreationDescription'))}
                                   >
                     <Text style={Style.continueTouchableOpacityLabel}>
                         Next

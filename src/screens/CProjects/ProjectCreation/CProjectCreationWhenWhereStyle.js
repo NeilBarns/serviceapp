@@ -23,16 +23,13 @@ const CProjectCreationWhenWhereStyle = ScaledSheet.create({
 
     calendar:
     {
-        marginTop: '15@s'
+        // marginTop: '15@s',
+        // height: '100@s'
     },
 
     timeDetailsContainer:{
         flexDirection: 'row',
-        marginTop: '20@s',
-        borderTopWidth: '2@s',
-        borderColor: '#e0dfdc',
-        padding: '10@s',
-        paddingTop: '20@s'        
+        padding: '10@s',       
     },
 
     timeDetailIconLabel:{
@@ -108,11 +105,11 @@ const CProjectCreationWhenWhereStyle = ScaledSheet.create({
 
     backTouchableOpacity:
     {
-        // backgroundColor: '#eb6e65',
         backgroundColor: 'white',
-        padding: '12@s',
+        paddingHorizontal: '5@s',
+        justifyContent: 'center',
+        alignItems: 'center',
         borderRadius: '10@s',
-        elevation: 5       
     },
 
     backTouchableOpacityIcon:
