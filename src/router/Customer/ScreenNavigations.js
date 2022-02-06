@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import { scale } from 'react-native-size-matters';
 import { createStackNavigator } from '@react-navigation/stack';
+import useTaskDetailsContext from '../../hooks/Customer/useTaskDetailsContext';
+import useTaskDetailsGlobal from '../../hooks/Customer/useTaskDetailsGlobal';
 import useTaskDetailChangesMadeContext from '../../hooks/Customer/useTaskDetailChangesMadeContext';
 import useTaskDetailsChangesMadeGlobal from '../../hooks/Customer/useTaskDetailsChangesMadeGlobal';
 
@@ -103,25 +105,25 @@ const HomeStackScreen = () => (
     </Tab.Navigator>
 )
 
-
-
-
 export default function ScreenNavigations() {
 
-    const globalTaskDetailsChanges =  useTaskDetailsChangesMadeGlobal();
-    
+    const globalTaskDetails = useTaskDetailsGlobal();
+    const globalTaskDetailsChanges = useTaskDetailsChangesMadeGlobal();
+
     return (
-        <useTaskDetailChangesMadeContext.Provider value={globalTaskDetailsChanges}>
-            <NavigationContainer>
-                <HomeStack.Navigator
-                    screenOptions={{
-                        headerShown: false
-                    }}
-                >
-                    <HomeStack.Screen name="HomeStackScreen" component={HomeStackScreen} />
-                    <HomeStack.Screen name="CustomerProjectCreationScreen" component={CustomerProjectCreationScreen} />
-                </HomeStack.Navigator>
-            </NavigationContainer>
-        </useTaskDetailChangesMadeContext.Provider>
+        <useTaskDetailsContext.Provider value={globalTaskDetails}>
+            <useTaskDetailChangesMadeContext.Provider value={globalTaskDetailsChanges}>
+                <NavigationContainer>
+                    <HomeStack.Navigator
+                        screenOptions={{
+                            headerShown: false
+                        }}
+                    >
+                        <HomeStack.Screen name="HomeStackScreen" component={HomeStackScreen} />
+                        <HomeStack.Screen name="CustomerProjectCreationScreen" component={CustomerProjectCreationScreen} />
+                    </HomeStack.Navigator>
+                </NavigationContainer>
+            </useTaskDetailChangesMadeContext.Provider>
+        </useTaskDetailsContext.Provider >
     );
 }

@@ -1,11 +1,11 @@
 import { ScaledSheet } from 'react-native-size-matters';
 
-const CProjectCreationScreenStyle = ScaledSheet.create ({
+const CProjectCreationScreenStyle = ScaledSheet.create({
 
     container:
     {
-        flex:1,
-        backgroundColor:'white'
+        flex: 1,
+        backgroundColor: 'white'
     },
 
     coverImage:
@@ -48,7 +48,7 @@ const CProjectCreationScreenStyle = ScaledSheet.create ({
     {
         backgroundColor: 'white',
         width: '100%',
-        flex:1,
+        flex: 1,
         paddingTop: 0,
     },
 
@@ -57,12 +57,26 @@ const CProjectCreationScreenStyle = ScaledSheet.create ({
     {
         fontFamily: 'Poppins-Regular',
         fontSize: '35@s',
-        // marginTop: '10@s',
-        // marginLeft: '15@s',
         textAlign: 'center'
     },
 
-    
+    toastView: {
+        justifyContent: 'flex-end',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    toastIcon: {
+        color: 'red',
+        fontSize: '22@s',
+        marginRight: '10@s'
+    },
+
+    toastLabel:{
+        fontWeight: 'bold'
+    }
+
 });
 
 export default CProjectCreationScreenStyle;
