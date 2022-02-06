@@ -1,6 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import {View, ScrollView, ImageBackground, Text, Pressable, StatusBar} from 'react-native'
 import { scale } from 'react-native-size-matters';
+import useAsyncStorageOperation from '../../hooks/Customer/useAsyncStorageOperation';
 
 import CHomeScreenStyles from './CHomeScreenStyles'
 
@@ -17,11 +18,17 @@ const CHomeScreen = () => {
 
     const refRBSheet = useRef();
 
+    const { initializeStorage } = useAsyncStorageOperation();
+
     const statusBarColorsValues = ['#FAFAFA', '#eb6e65'];
     const statusBarStyleValues = ['dark-content', 'light-content'];
 
     const [statusBarBackground, setStatusBarBackground] = useState(statusBarColorsValues[0]);
     const [statusBarStyle, setStatusBarStyle] = useState(statusBarStyleValues[0]);
+    
+    useEffect(() => {
+        initializeStorage();
+    }, []);
     
 
 

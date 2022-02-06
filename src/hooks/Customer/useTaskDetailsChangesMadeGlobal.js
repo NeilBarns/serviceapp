@@ -6,7 +6,6 @@ const useTaskDetailsChangesMade = () => {
 
     const actions_changes = (action) => {
         const { type } = action;
-        console.log(type);
         switch (type) {
             case 'changesMade':
                 return setTaskDetailsChangesMade(true);
